@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1B1564</color>
+    <color name="colorPrimaryDark">#000039</color>
+    <color name="colorPrimaryLight">#4E3C93</color>
+    <color name="colorAccent">#00FFC5</color>
+    <color name="colorAccentDark">#1E7C95</color>
+    <color name="highlight">#ED008E</color>
+
+    <color name="text">#FFF</color>
+    <color name="text_light">#cccccc</color>
+    <color name="activity_background">#f2f2f2</color>
+    <color name="mask">#4DFFFFFF</color>
+
+    <color name="grey_80">#37474F</color>
+
+</resources>

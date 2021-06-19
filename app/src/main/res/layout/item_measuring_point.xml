@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="measuringPoint"
+            type="com.example.wm_android_client.models.MeasuringPoint" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_4sdp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/imageMP" />
+
+        <View
+            android:id="@+id/background_section_one"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/background_measuring_point"
+            android:paddingBottom="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/mp_address"
+            app:layout_constraintVertical_bias="1.0"
+            tools:layout_editor_absoluteX="5dp" />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/imageMP"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_foreground"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:riv_corner_radius="@dimen/_4sdp"
+            />
+
+
+        <TextView
+            android:id="@+id/mp_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:fontFamily="@font/opensans_semibold"
+            android:includeFontPadding="false"
+            android:paddingTop="@dimen/_8sdp"
+            android:text='@{measuringPoint.street +" "+ measuringPoint.number}'
+            android:textColor="@color/text"
+            android:textSize="@dimen/_13ssp"
+            android:hint="Street name 111"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageMP"
+            app:layout_constraintTop_toTopOf="@id/imageMP" />
+
+        <TextView
+            android:id="@+id/mp_place"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/opensans_regular"
+            android:includeFontPadding="false"
+            android:text="@{measuringPoint.place}"
+            android:textColor="@color/text"
+            android:textSize="@dimen/_12ssp"
+            android:hint="New York"
+            app:layout_constraintEnd_toEndOf="@id/mp_address"
+            app:layout_constraintStart_toStartOf="@id/mp_address"
+            app:layout_constraintTop_toBottomOf="@id/mp_address" />
+
+        <TextView
+            android:id="@+id/owner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/opensans_regular"
+            android:includeFontPadding="false"
+            android:text="@{measuringPoint.owner}"
+            android:textColor="@color/text"
+            android:textSize="@dimen/_12ssp"
+            android:hint="John Doe"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            app:layout_constraintEnd_toStartOf="@id/note"
+            app:layout_constraintStart_toStartOf="@id/mp_place"
+            app:layout_constraintTop_toBottomOf="@id/mp_place" />
+
+
+        <ImageView
+            android:id="@+id/note"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/vector_description_24"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/gps"
+            app:tint="@color/colorAccent" />
+
+        <ImageView
+            android:id="@+id/gps"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/vector_add_location_24"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/colorAccent" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
